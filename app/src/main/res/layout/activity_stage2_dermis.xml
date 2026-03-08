@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/medic_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        tools:context=".Stage6Activity">
+
+        <TextView
+            android:id="@+id/stageTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="STAGE 6"
+            android:textColor="@color/layer_dermis"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THE DERMIS"
+            android:textColor="@color/medic_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="MISSION: CRITICAL THERMAL REGULATION"
+            android:textColor="@color/medic_secondary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/medic_surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/wordTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02:00"
+                    android:textColor="#F43F5E"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:id="@+id/crosswordGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:columnCount="6"
+                    android:rowCount="6"
+                    android:padding="4dp"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/wordDraft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="TYPE WORD..."
+                    android:textColorHint="@color/medic_secondary"
+                    android:textColor="@color/neon_gold"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnClearWord"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CLEAR"
+                        android:textColor="#F43F5E" />
+
+                    <Button
+                        android:id="@+id/btnSubmitWord"
+                        style="@style/GameButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="SUBMIT WORD"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Circular Letter Pool Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="24dp"
+            android:clipChildren="false"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/circularPool"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_glass_card" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnComplete2"
+            style="@style/GameButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="PROCEED TO HYPODERMIS"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

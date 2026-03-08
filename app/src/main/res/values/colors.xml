@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deep Night Theme -->
+    <color name="medic_bg">#020617</color> <!-- Slate 950 -->
+    <color name="medic_surface">#0F172A</color> <!-- Slate 900 -->
+    <color name="medic_text">#F8FAFC</color> <!-- Slate 50 -->
+    <color name="medic_accent">#22D3EE</color> <!-- Cyan 400 -->
+    <color name="medic_secondary">#A855F7</color> <!-- Purple 500 -->
+    <color name="medic_glass">#20FFFFFF</color> <!-- 12% White -->
+    <color name="medic_surface_bright">#1E293B</color> <!-- Slate 800 -->
+    
+    <!-- Neon Highlights -->
+    <color name="neon_pink">#F472B6</color>
+    <color name="neon_cyan">#22D3EE</color>
+    <color name="neon_gold">#FACC15</color>
+    
+    <color name="layer_epidermis">#22D3EE</color>
+    <color name="layer_dermis">#A855F7</color>
+    <color name="layer_hypodermis">#FACC15</color>
+    
+    <color name="game_background">@color/medic_bg</color>
+    <color name="game_text">@color/medic_text</color>
+</resources>

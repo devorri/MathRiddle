@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/medic_bg"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    tools:context=".Stage1Activity">
+
+    <TextView
+        android:id="@+id/stageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="STAGE 1"
+        android:textColor="@color/medic_accent"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/missionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STRATUM CORNEUM"
+        android:textColor="@color/medic_text"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="4 PICS 1 WORD: WHAT IS THIS BARRIER?"
+        android:textColor="@color/medic_secondary"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <!-- 4 Pics Grid -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardBackgroundColor="@color/medic_surface">
+        
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_shield_1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_shield_2" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_shield_3" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_shield_4" />
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Letter Slots -->
+    <LinearLayout
+        android:id="@+id/letterSlotsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal" />
+
+    <!-- Keyboard Grid -->
+    <GridLayout
+        android:id="@+id/keyboardGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        android:columnCount="6"
+        android:rowCount="2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnComplete"
+        style="@style/GameButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="PENETRATE DEEPER"
+        android:visibility="gone" />
+
+</LinearLayout>

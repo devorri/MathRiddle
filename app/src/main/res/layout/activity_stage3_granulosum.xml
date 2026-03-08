@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/game_background"
+    android:padding="24dp"
+    tools:context=".Stage3Activity">
+
+    <TextView
+        android:id="@+id/stageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="STAGE 3"
+        android:textColor="@color/layer_epidermis"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/missionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STRATUM GRANULOSUM"
+        android:textColor="@color/medic_text"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="I am the oily barrier that seals your cells, keeping water in and invaders in hell. WHAT AM I?"
+        android:textColor="@color/neon_pink"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Spelling Grid Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="24dp"
+        app:cardBackgroundColor="@color/medic_surface">
+
+        <GridLayout
+            android:id="@+id/spellingGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:padding="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/currentSpellingContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnComplete"
+        style="@style/GameButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="ENTER DEEPER LAYERS"
+        android:visibility="gone" />
+
+</LinearLayout>

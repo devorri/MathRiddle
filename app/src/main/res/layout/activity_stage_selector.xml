@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/game_background"
+    android:padding="24dp"
+    tools:context=".StageSelectorActivity">
+
+    <TextView
+        android:id="@+id/hubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="MEDIC DESCENT"
+        android:textColor="@color/medic_accent"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <Button android:id="@+id/btnStage1" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="1: STRATUM CORNEUM" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage2" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="2: STRATUM LUCIDUM" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage3" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="3: STRATUM GRANULOSUM" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage4" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="4: STRATUM SPINOSUM" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage5" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="5: STRATUM BASALE" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage6" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="6: THE DERMIS" />
+            <View android:layout_width="2dp" android:layout_height="20dp" android:background="@color/medic_surface_bright" />
+            
+            <Button android:id="@+id/btnStage7" style="@style/GameButtonStyle" android:layout_width="match_parent" android:layout_height="70dp" android:text="7: THE HYPODERMIS" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

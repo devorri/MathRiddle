@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Trial" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/medic_accent</item>
+        <item name="android:windowBackground">@color/medic_bg</item>
+        <item name="android:statusBarColor">@color/medic_bg</item>
+    </style>
+</resources>

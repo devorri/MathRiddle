@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/medic_bg"
+    android:padding="24dp"
+    tools:context=".Stage5Activity">
+
+    <TextView
+        android:id="@+id/stageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="STAGE 5"
+        android:textColor="@color/layer_epidermis"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/missionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STRATUM BASALE"
+        android:textColor="@color/medic_text"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="PRECISION MITOSIS: TAP AT THE PEAK!"
+        android:textColor="@color/neon_gold"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="48dp"
+        app:cardBackgroundColor="@color/medic_surface">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/motherCell"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_shield_3"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_glass_card" />
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="20dp"
+        android:background="@drawable/bg_glass_card">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MITOSIS STABILITY METER"
+            android:textColor="@color/medic_secondary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/mitosisMeter"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="12dp"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/mitosisText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="STABILITY: 0%"
+            android:textColor="@color/medic_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnComplete"
+        style="@style/GameButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="COMPLETE ANATOMY RUN"
+        android:visibility="gone" />
+
+</LinearLayout>
