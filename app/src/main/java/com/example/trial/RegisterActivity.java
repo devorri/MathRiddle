@@ -1,9 +1,7 @@
 package com.example.trial;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         db = AppDatabase.getDatabase(this);
         firstNameEditText = findViewById(R.id.firstNameEditText);
-        // ... (rest of findViewByIds)
         lastNameEditText = findViewById(R.id.lastNameEditText);
         studentIdEditText = findViewById(R.id.studentIdEditText);
         ageEditText = findViewById(R.id.ageEditText);
@@ -38,19 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         loginLink = findViewById(R.id.loginLink);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                performRegister();
-            }
-        });
-
-        loginLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Go back to Login
-            }
-        });
+        registerButton.setOnClickListener(v -> performRegister());
+        loginLink.setOnClickListener(v -> finish());
     }
 
     private void performRegister() {
@@ -61,26 +47,23 @@ public class RegisterActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // (Validation logic remains same)
         if (firstName.isEmpty()) { firstNameEditText.setError("First name required"); return; }
-        if (lastName.isEmpty()) { lastNameEditText.setError("Surname required"); return; }
+        if (lastName.isEmpty()) { lastNameEditText.setError("Last name required"); return; }
         if (studentId.isEmpty()) { studentIdEditText.setError("Student ID required"); return; }
         if (age.isEmpty()) { ageEditText.setError("Age required"); return; }
         if (email.isEmpty()) { emailEditText.setError("Email required"); return; }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) { emailEditText.setError("Invalid email"); return; }
-        if (password.length() < 6) { passwordEditText.setError("Password too short"); return; }
+        if (password.length() < 6) { passwordEditText.setError("Password must be at least 6 characters"); return; }
 
-        // Check if user exists
         if (db.userDao().getUserByEmail(email) != null) {
-            emailEditText.setError("This medic sequence is already registered!");
+            emailEditText.setError("This email is already registered!");
             return;
         }
 
-        // Save to DB
         User newUser = new User(firstName, lastName, studentId, age, email, password);
         db.userDao().registerUser(newUser);
 
-        Toast.makeText(this, "Clinical record established. Access granted.", Toast.LENGTH_SHORT).show();
-        finish(); // Return to Login
+        Toast.makeText(this, "Account created successfully! 🎉", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

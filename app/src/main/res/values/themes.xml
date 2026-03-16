@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <!-- Base application theme. -->
-    <style name="Theme.Trial" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/medic_accent</item>
-        <item name="android:windowBackground">@color/medic_bg</item>
-        <item name="android:statusBarColor">@color/medic_bg</item>
+    <style name="Theme.Trial" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
     </style>
 </resources>

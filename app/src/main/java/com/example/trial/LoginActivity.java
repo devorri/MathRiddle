@@ -1,8 +1,8 @@
 package com.example.trial;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,6 +25,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Auto-login check
+        SharedPreferences prefs = getSharedPreferences("math_riddles_prefs", MODE_PRIVATE);
+        int savedUserId = prefs.getInt("userId", -1);
+        if (savedUserId != -1) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra("userId", savedUserId);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
 
         db = AppDatabase.getDatabase(this);
@@ -33,19 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         registerLink = findViewById(R.id.registerLink);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                performLogin();
-            }
-        });
-
-        registerLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
+        loginButton.setOnClickListener(v -> performLogin());
+        registerLink.setOnClickListener(v ->
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class))
+        );
     }
 
     private void performLogin() {
@@ -62,14 +65,19 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Verify with DB
         User user = db.userDao().login(email, password);
         if (user != null) {
-            Toast.makeText(this, "Welcome back, Medic " + user.lastName, Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, IntroActivity.class));
+            // Save session
+            SharedPreferences prefs = getSharedPreferences("math_riddles_prefs", MODE_PRIVATE);
+            prefs.edit().putInt("userId", user.id).apply();
+
+            Toast.makeText(this, "Welcome back, " + user.firstName + "! 🎉", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra("userId", user.id);
+            startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Access Denied: Invalid credentials", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
         }
     }
 }

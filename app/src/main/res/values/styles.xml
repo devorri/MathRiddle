@@ -1,57 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Glassmorphism Card style -->
-    <style name="GlassCardStyle">
-        <item name="android:background">@drawable/bg_glass_card</item>
+    <!-- Category Card -->
+    <style name="CategoryCardStyle">
+        <item name="android:background">@drawable/bg_category_card</item>
         <item name="android:padding">16dp</item>
     </style>
 
-    <!-- Neon Puzzle Tile style -->
-    <style name="PuzzleTileStyle" parent="Widget.Material3.Button.ElevatedButton">
+    <!-- Stat Card -->
+    <style name="StatCardStyle">
+        <item name="android:background">@drawable/bg_stat_card</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Orange CTA Button -->
+    <style name="OrangeButtonStyle" parent="Widget.Material3.Button">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:padding">2dp</item>
-        <item name="android:minWidth">0dp</item>
-        <item name="android:minHeight">0dp</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="shapeAppearanceOverlay">@style/RoundedPill</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_on_accent</item>
+        <item name="backgroundTint">@color/accent</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/medic_accent</item>
-        <item name="backgroundTint">@color/medic_surface</item>
-        <item name="shapeAppearanceOverlay">@style/RoundedButton</item>
-        <item name="strokeColor">@color/medic_accent</item>
-        <item name="strokeWidth">1dp</item>
     </style>
 
-    <style name="GameButtonStyle" parent="Widget.Material3.Button">
+    <!-- Nav Button -->
+    <style name="NavButtonStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearanceOverlay">@style/CapsuleButton</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#020617</item> <!-- Dark text on bright button -->
-        <item name="backgroundTint">@color/medic_accent</item>
+        <item name="android:padding">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/SquareNavBarShape</item>
+        <item name="iconTint">@color/text_on_primary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
     </style>
 
-    <style name="CapsuleButton" parent="">
+    <!-- Active Nav Button -->
+    <style name="NavButtonActiveStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="backgroundTint">@color/text_on_primary</item>
+        <item name="shapeAppearanceOverlay">@style/SquareNavBarShape</item>
+        <item name="iconTint">@color/primary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <!-- Login Input -->
+    <style name="MathInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+    </style>
+
+    <!-- Login Button -->
+    <style name="LoginButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/RoundedPill</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <!-- Difficulty Chips -->
+    <style name="DifficultyChipEasy">
+        <item name="android:background">@drawable/bg_chip_easy</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="DifficultyChipMedium">
+        <item name="android:background">@drawable/bg_chip_medium</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="DifficultyChipHard">
+        <item name="android:background">@drawable/bg_chip_hard</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="RoundedPill" parent="">
         <item name="cornerSize">30dp</item>
     </style>
 
-    <style name="RoundedButton" parent="">
-        <item name="cornerSize">16dp</item>
+    <style name="SquareNavBarShape" parent="">
+        <item name="cornerSize">8dp</item>
     </style>
 
-    <!-- Neon Input Style -->
-    <style name="GameInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/medic_accent</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="hintTextColor">@color/medic_accent</item>
-        <item name="android:textColorHint">@color/medic_accent</item>
-        <item name="boxBackgroundColor">@color/medic_surface</item>
+    <!-- Answer Button style for Challenge -->
+    <style name="AnswerButtonStyle" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="shapeAppearanceOverlay">@style/RoundedCard</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+
+    <style name="RoundedCard" parent="">
+        <item name="cornerSize">16dp</item>
     </style>
 </resources>

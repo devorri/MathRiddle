@@ -7,14 +7,17 @@ import androidx.room.PrimaryKey;
 public class User {
     @PrimaryKey(autoGenerate = true)
     public int id;
-    
+
     public String firstName;
     public String lastName;
     public String studentId;
     public String age;
     public String email;
     public String password;
-    public int progress; // Highest stage cleared (0-7)
+    public int totalSolved;
+    public int bestStreak;
+    public int totalCorrect;
+    public int totalAttempted;
 
     public User(String firstName, String lastName, String studentId, String age, String email, String password) {
         this.firstName = firstName;
@@ -23,6 +26,14 @@ public class User {
         this.age = age;
         this.email = email;
         this.password = password;
-        this.progress = 0;
+        this.totalSolved = 0;
+        this.bestStreak = 0;
+        this.totalCorrect = 0;
+        this.totalAttempted = 0;
+    }
+
+    public int getAccuracy() {
+        if (totalAttempted == 0) return 0;
+        return Math.round((float) totalCorrect / totalAttempted * 100);
     }
 }
